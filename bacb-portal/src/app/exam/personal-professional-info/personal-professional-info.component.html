@@ -1,0 +1,585 @@
+<app-header></app-header>
+
+
+<div class="container">
+
+<!-- breadcrumb -->
+<div class="row mt-5 ml-0">
+    <div class="col-sm-12 offset-sm-0 p-0">
+        <nav>
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a>My Applications</a></li>
+                <li class="breadcrumb-item active">BCBA Exam Application Option 1 - Personal/Professional Information</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- title and progress bar-->
+<div class="row mt-4">
+    <div class="col-sm-12">
+        <div class="page-header d-flex justify-content-center">
+            <h2>BCBA Certification Application Option 1 - Demographic/Professional Information</h2>
+        </div>
+    </div>
+</div> 
+<div class="row">
+    <div class="col-sm-12">       
+        <div class="progress">
+            <div class="progress-bar bacb-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width: 30%;">
+                3/10
+            </div>
+        </div>
+        <p class="ml-4">
+            Provide your information below.
+        </p>
+    </div>
+</div>
+
+<!-- form elements -->    
+<form (ngSubmit)="proInfo(pi)" #pi="ngForm" class="mt-2 mb-2">
+
+
+    <!-- demographic address -->
+    <div class="row mt-5">
+        <div class="col-sm-12">
+            <div class="panel panel-default bacb-panel-bg">
+                <legend class="panel-heading bacb-panel-header">Demographic Information</legend>
+                <div class="panel-body">
+
+                    <div class="row mt-2">
+                        <div class="col-lg-12">
+                           
+                           
+                            <div class="form-group col-lg-3" show-errors>
+
+
+                                <!-- <label>Date of Birth<sup class="text-danger">*</sup></label>
+                                <p class="input-group">
+                                    <input type="date" class="form-control" />
+                                </p> -->
+
+
+                                <mat-form-field class="width-100">
+                                    <input matInput [matDatepicker]="picker" placeholder="Date of Birth" required>
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+
+                                <!-- <mat-form-field>
+                                    <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field> -->
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <!-- gender -->
+                    <div class="row">
+                            <div class="col-lg-12">
+                                <div class="form-group col-lg-3" show-errors>
+                                    
+                                    
+                                        <mat-form-field class="width-100">
+                                            <mat-select placeholder="Gender" name="gender" id="gender" [(ngModel)]="selectedGender" ngModel>
+                                                <mat-option value="Female">Female</mat-option>
+                                                <mat-option value="Male">Male</mat-option>
+                                                <mat-option value="Other">Other</mat-option>
+                                                <mat-option value="noanswer">Prefer not to answer</mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+
+                                    <!-- <label>Gender<sup class="text-danger">*</sup></label>
+                                    <select class="form-control"
+                                            name="gender"
+                                            id="gender"
+                                            placeholder="Gender">
+                                        <option value=""></option>
+                                        <option value="">Female</option>
+                                        <option value="">Male</option>
+                                        <option value="">Other</option>
+                                        <option value="">Prefer not to answer</option>
+                                    </select> -->
+
+
+
+
+                                </div>
+
+                                <div class="form-group col-lg-3">
+                                        <mat-form-field *ngIf="selectedGender == 'Other'" class="width-100">
+                                                <input matInput 
+                                                type="text"
+                                                name="genderother"
+                                                id="genderother"
+                                                placeholder="Gender - Other"
+                                                ngModel
+                                                >
+                                        </mat-form-field>
+                                    
+                                    
+                                    <!-- <label>Gender - Other<sup class="text-danger">*</sup></label>
+                                    <input type="text"
+                                            placeholder="Only visible if other is selected"
+                                            class="form-control"
+                                            name="ethnicity_other"
+                                            id="ethnicity_other"> -->
+                                </div>
+
+
+                                <div class="form-group col-lg-3" show-errors>
+                                    
+                                    
+                                    <mat-form-field class="width-100">
+                                        <mat-select placeholder="Race/Ethnicity" name="ethnicity" id="ethnicity" [(ngModel)]="selectedEthnicity" ngModel>
+                                            <mat-option value="American Indian/Alaska Native">American Indian/Alaska Native</mat-option>
+                                            <mat-option value="Asian">Asian</mat-option>
+                                            <mat-option value="Black/African American">Black/African American</mat-option>
+                                            <mat-option value="Hispanic/Latino">Hispanic/Latino</mat-option>
+                                            <mat-option value="Native Hawaiian/Other Pacific Islander">Native Hawaiian/Other Pacific Islander</mat-option>
+                                            <mat-option value="White">White</mat-option>
+                                            <mat-option value="Prefer Not to Answer">Prefer Not to Answer</mat-option>                                            
+                                        </mat-select>
+                                    </mat-form-field>
+                                    
+                                    
+                                    
+                                    <!-- <label>Ethnicity<sup class="text-danger">*</sup></label>
+                                    <select class="form-control"
+                                            name="ethnicity"
+                                            id="ethnicity"
+                                            placeholder="Ethnicity">
+                                        <option value=""></option>
+                                        <option value="">African American</option>
+                                        <option value="">Asian</option>
+                                        <option value="">Caucasian/White</option>
+                                        <option value="">Hispanic</option>
+                                        <option value="">Native American</option>
+                                        <option value="">Mixed</option>
+                                        <option value="">Other</option>
+                                        <option value="">Unknown</option>
+                                        <option value="">Prefer not to answer</option>
+                                    </select> -->
+
+
+
+                                </div>
+                                <div class="form-group col-lg-3">
+                                    
+                                        <!-- <mat-form-field *ngIf="selectedEthnicity == 'Other'" class="width-100">
+                                                <input matInput 
+                                                type="text"
+                                                name="genderother"
+                                                id="genderother"
+                                                placeholder="Gender - Other"
+                                                ngModel
+                                                >
+                                        </mat-form-field> -->
+
+
+<!--                                     
+                                    <label>Ethnicity - Other<sup class="text-danger">*</sup></label>
+                                    <input type="text"
+                                            placeholder="Only visible if other is selected"
+                                            class="form-control"
+                                            name="ethnicity_other"
+                                            id="ethnicity_other"> -->
+
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- professional-->
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="panel panel-default bacb-panel-bg">
+                <legend class="panel-heading bacb-panel-header">Professional Information</legend>
+                <div class="panel-body">
+                    
+                    <div class="row mt-1 mb-3 border-bottom">
+                        <div class="col-sm-12">
+                                <h5> Primary Area Information </h5> 
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 mb-4">
+                        
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Primary Role in Behavior Analysis" name="primaryrole" id="primaryrole" [(ngModel)]="selectedResearch" ngModel required>
+                                    <mat-option value="Practitioner">Practitioner</mat-option>
+                                    <mat-option value="Faculty">Faculty</mat-option>
+                                    <mat-option value="Researcher">Researcher</mat-option>
+                                    <mat-option value="Administrator">Administrator</mat-option>
+                                    <mat-option value="Student">Student</mat-option>
+                                    <mat-option value="Secondary Role">Secondary Role</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Primary Area of Professional Emphasis" name="primaryemphasis" id="primaryemphasis" [(ngModel)]="selectedEmphasis" ngModel required>
+                           
+                                    <mat-option value="">Autism Spectrum Disorders</mat-option>
+                                    <mat-option value="">Behavioral Gerontology</mat-option>
+                                    <mat-option value="">Behavioral Health / Behavioral Medicine</mat-option>
+                                    <mat-option value="">Behavioral Pediatrics</mat-option>
+                                    <mat-option value="">Brain Injury Rehabilitation</mat-option>
+                                    <mat-option value="">Child Welfare</mat-option>
+                                    <mat-option value="">Corrections & Delinquency</mat-option>
+                                    <mat-option value="">Dissemination of Behavior Analysis</mat-option>
+                                    <mat-option value="">Education</mat-option>
+                                    <mat-option value="">Higher Education: Research & Teaching</mat-option>
+                                    <mat-option value="">Intellectual & Developmental Disabilities</mat-option>
+                                    <mat-option value="">Non-University Research</mat-option>
+                                    <mat-option value="">Organizational Behavior Management</mat-option>
+                                    <mat-option value="">Parent & Caregiver Training</mat-option>
+                                    <mat-option value="">Professional Supervision</mat-option>
+                                    <mat-option value="">Public Policy & Advocacy</mat-option>
+                                    <mat-option value="">Sports & Fitness</mat-option>
+                                    <mat-option value="Other">Other</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-4">
+
+                            <mat-form-field *ngIf="selectedEmphasis == 'Other'" class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="emphasisother"
+                                    id="emphasisother"
+                                    placeholder="Emphasis - Other"
+                                    ngModel>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+                    <!-- <div class="row mt-4">
+                        <div class="col-sm-4">
+                            <label class="ml-3">Primary Area Client Ages <sup class="text-danger">*</sup></label>
+                            <div class="row ml-1">
+                                <div class="col-sm-12">
+                                    <mat-checkbox color="primary">
+                                        <span class="checkbox-text"> 0-2 </span>
+                                    </mat-checkbox>
+                                    <br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">3-6</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">7-12</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">13-17</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">18-25</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">26-40</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">41-64</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">65 and above</span></mat-checkbox><br>
+                                    <mat-checkbox color="primary"><span class="checkbox-text">I do not serve clients in my role</span></mat-checkbox>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <div class="row mt-1 mb-3 pb-5">
+                            <div class="col-sm-4">
+                                <mat-form-field class="width-100">
+                                    <mat-select id="clientage" [(ngModel)]="selectedValue" name="selectage" placeholder="Primary Area Client Ages" multiple ngModel>
+                                      <mat-option value="0-2">0-2</mat-option>
+                                      <mat-option value="3-6">3-6</mat-option>
+                                      <mat-option value="7-12">7-12</mat-option>
+                                      <mat-option value="13-17">13-17</mat-option>
+                                      <mat-option value="18-25">18-25</mat-option>
+                                      <mat-option value="26-40">26-40</mat-option>
+                                      <mat-option value="41-64">41-64</mat-option>
+                                      <mat-option value="65">65 and above</mat-option>
+                                      <mat-option value="norole" (click)="unselect()">I do not serve clients in my role</mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                    <div class="row mt-4 mb-3 border-bottom">
+                        <div class="col-sm-12">
+                                <h5> Secondary Area Information </h5> 
+                        </div>
+                    </div>
+
+                    <div class="row mt-1 mb-4">
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Secondary Role in Behavior Analysis" name="primaryrole2" id="primaryrole2" [(ngModel)]="selectedResearch" ngModel>
+                                    <mat-option value="Practitioner">Practitioner</mat-option>
+                                    <mat-option value="Faculty">Faculty</mat-option>
+                                    <mat-option value="Researcher">Researcher</mat-option>
+                                    <mat-option value="Administrator">Administrator</mat-option>
+                                    <mat-option value="Student">Student</mat-option>
+                                    <mat-option value="Secondary Role">Secondary Role</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Secondary Area of Professional Emphasis" name="primaryemphasis2" id="primaryemphasis2" [(ngModel)]="selectedEmphasis2" ngModel >
+                           
+                                    <mat-option value="">Autism Spectrum Disorders</mat-option>
+                                    <mat-option value="">Behavioral Gerontology</mat-option>
+                                    <mat-option value="">Behavioral Health / Behavioral Medicine</mat-option>
+                                    <mat-option value="">Behavioral Pediatrics</mat-option>
+                                    <mat-option value="">Brain Injury Rehabilitation</mat-option>
+                                    <mat-option value="">Child Welfare</mat-option>
+                                    <mat-option value="">Corrections & Delinquency</mat-option>
+                                    <mat-option value="">Dissemination of Behavior Analysis</mat-option>
+                                    <mat-option value="">Education</mat-option>
+                                    <mat-option value="">Higher Education: Research & Teaching</mat-option>
+                                    <mat-option value="">Intellectual & Developmental Disabilities</mat-option>
+                                    <mat-option value="">Non-University Research</mat-option>
+                                    <mat-option value="">Organizational Behavior Management</mat-option>
+                                    <mat-option value="">Parent & Caregiver Training</mat-option>
+                                    <mat-option value="">Professional Supervision</mat-option>
+                                    <mat-option value="">Public Policy & Advocacy</mat-option>
+                                    <mat-option value="">Sports & Fitness</mat-option>
+                                    <mat-option value="Other">Other</mat-option>
+
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+
+                    <div class="row mt-4">
+                        <div class="col-sm-4">
+
+                            <mat-form-field *ngIf="selectedEmphasis2 == 'Other'" class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="emphasisother"
+                                    id="emphasisother"
+                                    placeholder="Emphasis - Other"
+                                    ngModel>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4 mb-3 border-bottom">
+                        <div class="col-sm-12">
+                            <h5> Other Areas </h5> 
+                        </div>
+                    </div>
+
+
+                    <div class="row mt-4 mb-3 pb-5">
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Other Areas of Professional Emphasis" multiple>
+                                  <!-- <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option> -->
+                                  <mat-option value="">Secondary Area Client Ages</mat-option>
+                                  <mat-option value="">Autism Spectrum Disorders</mat-option>
+                                  <mat-option value="">Behavioral Gerontology</mat-option>
+                                  <mat-option value="">Behavioral Health / Behavioral Medicine</mat-option>
+                                  <mat-option value="">Behavioral Pediatrics</mat-option>
+                                  <mat-option value="">Brain Injury Rehabilitation</mat-option>
+                                  <mat-option value="">Child Welfare</mat-option>
+                                  <mat-option value="">Corrections & Delinquency</mat-option>
+                                  <mat-option value="">Dissemination of Behavior Analysis</mat-option>
+                                  <mat-option value="">Education</mat-option>
+                                  <mat-option value="">Higher Education: Research & Teaching</mat-option>
+                                  <mat-option value="">Intellectual & Developmental Disabilities</mat-option>
+                                  <mat-option value="">Non-University Research</mat-option>
+                                  <mat-option value="">Organizational Behavior Management</mat-option>
+                                  <mat-option value="">Parent & Caregiver Training</mat-option>
+                                  <mat-option value="">Professional Supervision</mat-option>
+                                  <mat-option value="">Public Policy & Advocacy</mat-option>
+                                  <mat-option value="">Sports & Fitness</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <div class="row mt-4">
+                        <div class="col-sm-6">
+
+                            <!-- <mat-form-field class="example-full-width width-100">
+                                    <textarea matInput placeholder="Secondary Area of Professional Emphasis"></textarea>
+                            </mat-form-field> -->
+
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<!----           --------------------------                  ------>        
+
+<!-- primary role -->
+<!-- <div class="row">
+    <div class="col-lg-12">
+        <div class="form-group col-lg-3">
+            <label>Primary Role in Behavior Analysis<sup class="text-danger">*</sup></label>
+            <select class="form-control">
+                <option value=""></option>
+                <option value="">Practitioner</option>
+                <option value="">Faculty</option>
+                <option value="">Researcher</option>
+                <option value="">Administrator</option>
+                <option value="">Student</option>
+            </select>
+        </div>
+    </div>
+</div> -->
+
+<!-- primary area of professinoal -->
+<!-- <div class="row">
+    <div class="col-sm-12">
+        <div class="form-group col-lg-3">
+            <label>Primary Area of Professional Emphasis<sup class="text-danger">*</sup></label>
+            <select class="form-control">
+                <option value=""></option>
+                <option value="">Autism Spectrum Disorders</option>
+                <option value="">Behavioral Gerontology</option>
+                <option value="">Behavioral Health / Behavioral Medicine</option>
+                <option value="">Behavioral Pediatrics</option>
+                <option value="">Brain Injury Rehabilitation</option>
+                <option value="">Child Welfare</option>
+                <option value="">Corrections & Delinquency</option>
+                <option value="">Dissemination of Behavior Analysis</option>
+                <option value="">Education</option>
+                <option value="">Higher Education: Research & Teaching</option>
+                <option value="">Intellectual & Developmental Disabilities</option>
+                <option value="">Non-University Research</option>
+                <option value="">Organizational Behavior Management</option>
+                <option value="">Parent & Caregiver Training</option>
+                <option value="">Professional Supervision</option>
+                <option value="">Public Policy & Advocacy</option>
+                <option value="">Sports & Fitness</option>
+                <option value="">Other</option>
+            </select>
+        </div>
+    </div>
+</div>   -->
+
+<!-- ages -->
+<!-- <div class="row"> 
+    <div class="col-sm-12 ml-2">
+        <label class="ml-3">Primary Ages of Clientele<sup class="text-danger">*</sup></label>
+        <div class="checkbox col-lg-12">
+            <label>
+                <input type="checkbox">
+                0-2
+            </label><br>
+            <label>
+                <input type="checkbox">
+                3-6
+            </label><br>
+            <label>
+                <input type="checkbox">
+                7-12
+            </label><br>
+            <label>
+                <input type="checkbox">
+                13-17
+            </label><br>
+            <label>
+                <input type="checkbox">
+                18-25
+            </label><br>
+            <label>
+                <input type="checkbox">
+                26-40
+            </label><br>
+            <label>
+                <input type="checkbox">
+                41-64
+            </label><br>
+            <label>
+                <input type="checkbox">
+                65 and above
+            </label><br>
+            <label>
+                <input type="checkbox">
+                I do not serve clients in my role
+            </label><br>
+        </div>
+    </div>
+</div> -->
+        
+<!-- multi select box professional emphasis-->
+<!-- <div class="row">
+    <div class="col-sm-4 ml-4">
+        <div class="form-group" show-errors>
+            <label>Secondary Area of Professional Emphasis</label>
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
+    </div>
+</div> -->
+
+<!-- footer -->
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="alert alert-danger alert-dismissible" role="alert" ng-if="application.data.errorMessage">
+            <button type="button" class="close" data-dismiss="alert" ng-click="application.data.errorMessage = ''" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4>Please complete all required fields</h4>
+        </div>
+    </div>
+</div> 
+
+<div class="row mb-5">  
+    <div class="col-lg-12 text-center">
+        <div class="btn-group" role="group">
+
+            <button mat-flat-button class="back-btn mr-4" routerLink="/info-release">Back</button>
+            
+            <button mat-flat-button class="cancel-btn mr-4">Cancel</button> 
+            
+            <button mat-flat-button class="save-exit-btn mr-4">Save & Exit</button>
+
+            <button mat-flat-button class="bacb-primary-btn" type="submit">Continue</button> 
+
+        </div>
+    </div>
+</div>
+
+</form> <!-- end form -->
+
+</div> <!-- end container -->
+
+
+
+
+
+
+

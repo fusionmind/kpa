@@ -1,0 +1,129 @@
+<app-header></app-header>
+
+<div class="container mb-5">
+    
+  <div class="row mt-4">
+    <div class="col-sm-12">
+      <div class="page-header d-flex justify-content-center">
+          <h1>BACB Account Portal</h1>
+      </div>
+    </div>
+  </div>  
+  
+  <!-- profile -->
+  <div class="row borde mb-5">
+    <div class="col-sm-12">
+
+        <mat-accordion>
+            <mat-expansion-panel style="border-bottom: 5px solid #202945; border-top: 5px solid #202945; background-color: #D2DCE2; ">
+              <mat-expansion-panel-header>
+                <mat-panel-title class="d-flex justify-content-center">
+                  <h4> Profile </h4>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              <section style="background-color:#D2DCE2;">
+              
+                <div class="row borderless" *ngFor="let profile of profiles">
+                    <div class="col-sm-4 borderless" style="border: none;">
+                      <ul class="list-group borderless m-0">
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Name: <span class="portal-op-text"> {{ profile.name }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1" >Address: <span class="portal-op-text"> {{ profile.address }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1"> City, State, Zip: <span class="portal-op-text"> {{ profile.city }}, {{ profile.state }}, {{ profile.zip }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Country: <span class="portal-op-text"> {{ profile.country }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Email: <span class="portal-op-text"> {{ profile.email }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Primary Phone Number: <span class="portal-op-text"> {{ profile.primaryPhone }} </span> </li>
+                      </ul> 
+                    </div>
+                    <div class="col-sm-4">
+                      <ul class="list-group borderless m-0">
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">BACB ID Number: <span class="portal-op-text"> {{ profile.bacb_id }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Certification Type: <span class="portal-op-text"> {{ profile.type }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Certification Number: <span class="portal-op-text"> {{ profile.number }} </span>  </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Certification Status: <span class="portal-op-text"> {{ profile.status }} </span> </li>
+                        <li class="list-group-item font-weight-bold portal-text m-1 p-1">Renewl Date: <span class="portal-op-text"> {{ profile.renewDate }} </span> </li>
+                      </ul> 
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="list-group borderless portal-acct-preferences">
+                          <li class="list-group-item font-weight-bold">
+                              <span class="portal-op-text"> Account Preferences Certification History ID Card </span>
+                          </li>
+                        </ul> 
+                    </div>
+                </div>
+
+              </section>
+            </mat-expansion-panel>
+        </mat-accordion>
+          
+    </div>
+  </div>
+
+
+
+  <div class="row mt-4">
+    
+    <div class="col-sm-6">
+        <div class="card profile-header-border-1 portal-box-card">
+            <div class="card-header d-flex justify-content-center profile-header profile-card-rounded">
+              <h2 class="card-title card-title-bar">ACTION ITEMS</h2>
+            </div>
+            <div class="card-body profile-card-body-border">
+              <h5 class="card-title"> - Action Items - </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <!-- <button type="submit" mat-stroked-button color="primary" class="bacb-primary-btn">View More 1</button> -->
+              <button mat-flat-button class="bacb-primary-btn">View More</button>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card profile-header-border-1 portal-box-card">
+            <div class="card-header d-flex justify-content-center profile-header profile-card-rounded">
+                <h2 class="card-title card-title-bar">CONTINUING ED</h2>
+            </div>
+            <div class="card-body profile-card-body-border">
+              <h5 class="card-title">- Action Items - </h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <!-- <button type="submit" mat-stroked-button color="primary" class="bacb-primary-btn">View More</button> -->
+              <button mat-flat-button class="bacb-primary-btn">View More</button>
+            </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="row mt-5">
+    
+    <div class="col-sm-6">
+        <div class="card profile-header-border-1 portal-box-card">
+            <div class="card-header d-flex justify-content-center profile-header profile-card-rounded">
+                <h2 class="card-title card-title-bar">SUPERVISOR INFORMATION</h2>
+            </div>
+            <div class="card-body profile-card-body-border">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <!-- <button type="submit" mat-stroked-button color="primary" class="bacb-primary-btn">View More</button> -->
+              <button mat-flat-button class="bacb-primary-btn">View More</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="card profile-header-border-1 portal-box-card">
+            <div class="card-header d-flex justify-content-center profile-header profile-card-rounded">
+                <h2 class="card-title card-title-bar">BACB NEWS</h2>
+            </div>
+            <div class="card-body profile-card-body-border">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <!-- <button type="submit" mat-stroked-button color="primary" class="bacb-primary-btn">View More</button> -->
+              <button mat-flat-button class="bacb-primary-btn">View More</button>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div> <!-- end container-->
+

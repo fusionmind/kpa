@@ -1,0 +1,16 @@
+
+.save-btm {
+    background-color: #202945 !important;
+    width: 125px;
+}
+.cancel-btn {
+    background-color: #d2dce2 !important;
+    width: 100px;
+}
+.profile-header {
+    background-color: #d2dce2 !important;
+}
+.mat-radio-button ~ .mat-radio-button {
+    padding-right: 16px;
+}
+

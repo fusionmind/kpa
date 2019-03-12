@@ -1,0 +1,22 @@
+.gear {
+    right: 14px;
+    top: 3px;
+    position: relative;
+    color: #202945;
+}
+
+.profile {
+    right: 17px;
+    top: 3px;
+    position: relative;
+    color: #202945;
+}
+
+.logout {
+    left: -73px;
+    top: 3px;
+    position: relative;
+    color: red;
+}
+
+

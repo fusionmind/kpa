@@ -1,0 +1,11 @@
+
+.list-item-summary {
+    background-color: #ffffff;
+    border: 1px solid #d2dce2 !important;  
+}
+
+.edit-button {
+    background-color: #537ba8;
+    color: #ffffff;
+    font-weight: 200;
+}

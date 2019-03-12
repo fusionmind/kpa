@@ -1,0 +1,14 @@
+
+
+::ng-deep .mat-checkbox .mat-checkbox-frame {
+    border-color: #bfbfbf;
+
+  }
+  
+  ::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: black !important;
+  }
+
+  .checkbox-text {
+    font-weight: lighter !important;
+  }

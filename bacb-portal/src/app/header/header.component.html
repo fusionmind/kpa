@@ -1,0 +1,84 @@
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-sm-12 p-0">
+            <div class="col-sm-2">
+                <img src="https://checkout.sandbox.netsuite.com/c.4040023/BACB/CustomerPortal/assets/images/BACB_Logo_200.png" class="logo-size" />
+            </div>
+            <div class="col-sm-10 d-flex justify-content-end border">
+                <ul class="nav nav-pills border-bottom border-top">
+                    <li role="presentation" class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                Maintenance 
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li> 
+                                    <a href="#">Continuing Education</a> 
+                                </li>
+                                <li> 
+                                    <a href="#">Voluntary Inactive</a> 
+                                </li>
+                            </ul>
+                        </li>                     
+
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Training 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> 
+                                <a href="#">Supervision</a> 
+                            </li>
+                        </ul>
+                    </li>                        
+                    <li role="presentation"><a href="#">Resources</a></li> 
+                    <li role="presentation"><a routerLink="/exam-landing">Applications</a></li> 
+                    <li role="presentation" class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            Supervision 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li> 
+                                <a href="#">Manage RBT</a> 
+                            </li>
+                            <li> 
+                                <a href="#">Manage BCaBA</a> 
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="presentation"><a href="#">Contact Us</a></li>
+                    <li role="presentation" class="dropdown active">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                            My Account 
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li role="presentation">
+                                <a routerLink="/account-portal" style="margin-left: 0px; padding-left: 35px;"> 
+                                    <span class="glyphicon glyphicon-user profile" aria-hidden="true"></span> 
+                                    Account Portal 
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="/profile-settings" style="margin-left: 0px; padding-left: 32px;"> 
+                                    <span class="glyphicon glyphicon-cog gear" aria-hidden="true"></span> 
+                                    Profile Settings     
+                                </a>
+                            </li>
+                            <!-- <li> 
+                                <a routerLink="/login" style="margin-left: 0px; padding-left:92px;"> 
+                                    <span class="glyphicon glyphicon-off logout" aria-hidden="true"></span> 
+                                    Logout 
+                                </a>
+                            </li> -->
+                            <li> 
+                                <a (click)=logoutClicked($event) style="margin-left: 0px; padding-left:92px;"> 
+                                    <span class="glyphicon glyphicon-off logout" aria-hidden="true"></span> 
+                                    Logout 
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

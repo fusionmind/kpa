@@ -1,0 +1,162 @@
+<app-header></app-header>
+
+
+<div class="container">
+
+<!-- breadcrumb -->
+<div class="row mt-5 ml-0">
+    <div class="col-sm-12 offset-sm-0 p-0">
+        <nav>
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a>My Applications</a></li>
+                <li class="breadcrumb-item active">BCBA Certification Application - Attestations</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
+<!-- title and progress bar-->   
+<div class="row mt-4">
+    <div class="col-sm-12">
+        <div class="page-header d-flex justify-content-center">
+            <h2>BCBA Certification Application - Attestations</h2>
+        </div>
+    </div>
+</div> 
+<div class="row">
+    <div class="col-sm-12">
+        <div class="progress">
+            <div class="progress-bar bacb-bar" role="progressbar" aria-valuenow="66.66" aria-valuemin="0" aria-valuemax="100" style="width: 88.88%;">
+                8/9
+            </div>
+        </div>
+    </div>
+</div>
+
+<form (ngSubmit)="attestations(att)" #att="ngForm" class="mt-2 mb-2">
+
+<mat-card class="mb-5">
+<div class="row mt-5">
+    <div class="col-sm-12 mb-5 border-bottom">
+        1. 
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-sm-12">
+        <label>
+                Have you read, are you in compliance with, and do you agree to continued compliance with all Behavior Analyst Certification Board ("BACB") rules and regulations, as may be revised, including, but not limited to, the BACB educational and experiential requirements, application standards, application FAQs, disciplinary and appeal standards, renewal, recertification, reentry rules, fees and application requirements?<sup>*</sup>
+        </label>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <mat-form-field>
+            <mat-select placeholder="Select">
+                <mat-option value="option">Yes</mat-option>
+                <mat-option value="option">No</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+</mat-card>
+
+<mat-card class="mb-5">
+<div class="row mt-5">
+    <div class="col-sm-12 mb-5 border-bottom">
+        2. 
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <label>
+            Do you have a physical or mental condition or addiction to any substance that could impair competent and objective professional performance of behavior analysis services and/or jeopardize public health and safety?
+        </label>
+        <p><i>See the <a href="https://www.bacb.com/examination-information/exam-accommodations/" target="_blank">Examination Accomodations </a>page for guidance on appropriate supporting documentation.</i></p>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <mat-form-field>
+                <mat-select placeholder="Select">
+                    <mat-option value="option">Yes</mat-option>
+                    <mat-option value="option">No</mat-option>
+                </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <label>Upload Supporting Documents for Physical/Mental Condition/Addiction<sup>*</sup></label>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <input type="file" class="input-group">
+    </div>
+</div>
+</mat-card>
+
+<mat-card class="mb-5">
+<div class="row mt-5">
+    <div class="col-sm-12 mb-5 border-bottom">
+        3. 
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <label>
+                Have you been subject to an investigation or disciplinary action by a health care organization, professional association, governmental entity, regulatory or licensing agency or authority, and/or have you ever been convicted, found or entered a plea of guilty, or are you presently being investigated or charged with any felony or misdemeanor directly relating to behavior analysis services or public health and safety?<sup>*</sup>
+        </label>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <mat-form-field>
+                <mat-select placeholder="Select">
+                    <mat-option value="option">Yes</mat-option>
+                    <mat-option value="option">No</mat-option>
+                </mat-select>
+        </mat-form-field>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <label>Upload Supporting Documents related to investigation or disciplinary action</label>
+    </div>
+</div>
+<div class="row mt-3">
+    <div class="col-sm-3">
+        <input type="file"class="input-group">
+    </div>
+</div>
+</mat-card>
+
+
+<!-- footer -->
+<div class="row mt-4">
+    <div class="col-lg-12">
+        <div class="alert alert-danger alert-dismissible" >
+            <button type="button" class="close"  aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            All fields are required to move forward. 
+        </div>
+    </div>
+</div> 
+<div class="row mb-5">  
+    <div class="col-lg-12 text-center">
+        <div class="btn-group" role="group">
+
+            <button mat-flat-button class="back-btn mr-4" routerLink="/experience-info">Back</button>
+        
+            <button mat-flat-button class="cancel-btn mr-4">Cancel</button> 
+            
+            <button mat-flat-button class="save-exit-btn mr-4">Save & Exit</button>
+
+            <button mat-flat-button class="bacb-primary-btn" type="submit">Continue</button> 
+
+        </div>
+    </div>  
+</div>
+
+</form>
+
+</div> <!-- end container-->

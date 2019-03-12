@@ -1,0 +1,240 @@
+<div class="container pb-5 mb-5">
+  <div class="row">
+      <div class="col-sm-2">
+          <img src="https://checkout.sandbox.netsuite.com/c.4040023/BACB/CustomerPortal/assets/images/BACB_Logo_200.png" class="logo-size" />
+      </div>
+  </div>
+
+  <div class="row">
+    <!-- title -->
+    <div class="col-sm-12">
+        <div class="page-header pl-0">
+            <h1 class="text-center md-display-2">Registration</h1>
+            <small style="color:#707070;">
+                Please complete all of the information below to create an account. Use your legal name as it appears on your identification. 
+                If you already have an account and have reached this page in error, click here to return to the login page.
+            </small>
+        </div>
+      </div>
+  </div>
+
+  <!-- warning message -->
+  <div class="row">
+      <div class="col-sm-12">
+        <div *ngIf="hasError" class="alert alert-danger p-3 m-3" role="alert">
+            {{ this.message}} 
+        </div>
+      </div>
+  </div>
+
+  <!-- old register form-->
+  <!-- <form #regForm="ngForm" class="mt-2 p-1" (submit)="registerUser($event)"> -->
+
+  <!-- register form-->
+  <form (ngSubmit)="registerNewUser(reg)" #reg="ngForm" class="mt-2 mb-2">
+
+    <div class="row">
+      <div class="col-sm-4">
+
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label> Username </mat-label>
+          <input matInput type="text" placeholder="Username" name="username" ngModel required>
+        </mat-form-field>
+        
+      </div>
+      <div class="col-sm-4">
+
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label> Password </mat-label>
+          <input matInput type="text" name="password" placeholder="Password" ngModel required>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-4">
+        
+        <!-- <mat-form-field appearance="outline" class="width-100">
+          <mat-label> Confirm Password </mat-label>
+          <input matInput type="text" name="password2" placeholder="Confirm Password" ngModel required>
+        </mat-form-field> -->
+
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-sm-4">
+
+        <mat-form-field appearance="outline" class="width-100">
+          <mat-label> Email Address </mat-label>
+          <input matInput type="email" name="email" placeholder="Email" ngModel required>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-4">
+
+          <mat-form-field appearance="outline" class="width-100">
+              <mat-label> Confirm Password </mat-label>
+              <input matInput type="text" name="password2" placeholder="Confirm Password" ngModel required>
+          </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2 mr-5">
+
+        <mat-form-field>
+          <mat-select placeholder="Salutation" matNativeControl name="salutation" ngModel>
+            <mat-option value="mr">Mr.</mat-option>
+            <mat-option value="mrs">Mrs.</mat-option>
+            <mat-option value="ms">Ms.</mat-option>
+            <mat-option value="dr">Dr.</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-2">
+
+        <mat-form-field>
+          <mat-select placeholder="Suffix" matNativeControl name="suffix" ngModel>
+            <mat-option value="jr">Jr.</mat-option>
+            <mat-option value="II">II</mat-option>
+            <mat-option value="III">III</mat-option>
+            <mat-option value="IV">IV</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label> First Name </mat-label>
+            <input matInput type="text" name="firstname" placeholder="First Name" ngModel required>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label> Middle Name </mat-label>
+            <input matInput type="text" name="middlename" placeholder="Middle Name" ngModel>
+        </mat-form-field>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label> Last Name </mat-label>
+            <input matInput type="text" name="lastname" placeholder="Last Name" ngModel required>
+        </mat-form-field>
+
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+
+        <mat-form-field class="width-100">
+            <mat-select placeholder="Country Code" id="countrycode" name="primecountrycode" ngModel required>
+                <mat-option *ngFor="let c of countrycode" [value]="c.dial_code" >
+                    {{c.name}} {{c.dial_code}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-3">
+
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label> Primary Phone Number </mat-label>
+            <input matInput type="text" name="primephonenumber" placeholder="Phone Number" ngModel required>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-2">
+
+        <mat-form-field appearance="outline" class="width-100">
+            <mat-label> Extension </mat-label>
+            <input matInput type="text" name="primeextension" placeholder="Extension" ngModel>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-3 d-flex justify-content-start align-items-center mobile-font">
+
+
+        <!-- <mat-checkbox color="primary" value="primemobile" name="primemobile" class="align-middle" (click)="pMobile('primemobile')"  ngModel> <span style="font-weight:lighter !important;">Mobile Number</span> </mat-checkbox>
+       -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+
+        <mat-form-field class="width-100">
+            <mat-select placeholder="Country Code" id="countrycode" name="secondarycountrycode" ngModel>
+                <mat-option *ngFor="let c of countrycode" [value]="c.dial_code" >
+                    {{c.name}} {{c.dial_code}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+      </div>
+      <div class="col-sm-3">
+
+          <mat-form-field appearance="outline" class="width-100">
+              <mat-label> Secondary Phone Number </mat-label>
+              <input matInput type="text" name="secondaryphonenumber" placeholder="Phone Number" ngModel>
+          </mat-form-field>
+   
+      </div>
+      <div class="col-sm-2">
+
+          <mat-form-field appearance="outline" class="width-100">
+              <mat-label> Extension </mat-label>
+              <input matInput type="text" name="secondaryextension" placeholder="Extension" ngModel>
+          </mat-form-field>
+  
+      </div>
+      <div class="col-sm-3 d-flex justify-content-start align-items-center mobile-font">
+<!-- 
+          <mat-checkbox color="primary" value="secondarymobile" name="secondarymobile" class="align-middle"  (click)="sMobile('secondarymobile')" ngModel> <span style="font-weight:lighter !important;">Mobile Number</span> </mat-checkbox>
+         -->
+      </div>      
+    </div>
+
+    <!-- mobile number -->
+    <mat-radio-group>
+      <div class="row mt-1 mb-5 mobile-font">
+        <div class="col-sm-3">
+            <mat-radio-button color="primary" value="primarymobile" id="primarymobile" name="primarymobile" (click)="mobile('pmobile')" class="mb-3"> <span style="font-weight:lighter !important;">Is your primary phone a mobile number? <sup>*</sup></span> </mat-radio-button>
+            <br>
+            <mat-radio-button color="primary" value="secondarymobile" id="secondarymobile" name="secondarymobile" (click)="mobile('smobile')"> <span style="font-weight:lighter !important;">Is your secondary phone a mobile number? <sup>*</sup></span> </mat-radio-button>
+        </div>
+      </div>
+    </mat-radio-group>
+
+
+    <div *ngIf="showLoadingIndicator" class="row">
+      <div  class="col-sm-12 d-flex justify-content-center">
+          <mat-spinner [diameter]="50"></mat-spinner>  <h3 class="ml-4"> Creating Account... </h3> 
+      </div>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-sm-12 d-flex justify-content-center">
+
+        <button mat-flat-button class="back-btn mr-4" routerLink="/login"> Back </button>
+        
+        <button mat-flat-button type="reset" class="cancel-btn mr-4"> Reset </button> 
+
+        <button mat-flat-button class="bacb-primary-btn" type="submit"> Register </button>
+
+      </div>
+    </div>  
+  
+  </form>  
+
+
+</div> <!-- end container -->

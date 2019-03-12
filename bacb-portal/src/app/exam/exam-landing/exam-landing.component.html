@@ -1,0 +1,200 @@
+<app-header></app-header>
+
+<div class="container">
+    
+  <div class="row mt-4">
+    <div class="col-sm-12">
+      <div class="d-flex justify-content-center">
+          <h1 class="page-title">Applications</h1>
+      </div>
+    </div>
+  </div> 
+
+  <!-- exam buttons -->
+  <!-- <div class="row mt-5 border" style="margin-bottom: 100px;">
+    <div class="col-sm-12">
+        
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle continue-btn" style="width:150px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  BCBA
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" routerLink="/exam-instructions">New Certification Application</a>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle continue-btn" style="width:150px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  RBT
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">New Exam Application</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-4 d-flex justify-content-center">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle continue-btn" style="width:150px;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  BCaBA
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">New Exam Application</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div> -->
+  
+
+<!-- new application exam -->
+<div class="row mt-4">  
+  <div class="col-sm-8 offset-sm-2">
+ 
+
+
+      <mat-accordion>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header style="background-color:#ccd7de;">
+              <mat-panel-title style="border:0px solid white;" class="d-flex justify-content-center">
+                BCBA
+              </mat-panel-title>
+              <!-- <mat-panel-description style="color:white;">
+                Choose Exam Type
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+        
+            <div class="row mt-3 mb-3">
+              <div class="col-sm-12">
+                <mat-list role="list">
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" routerLink="/exam-instructions">New Certification Application</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Exam Application - Option 1</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Exam Application - Option 2</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Exam Application - Option 3</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Recertification</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Retake Application</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> 
+                        <a class="dropdown-item" href="#">BCBA Qualify via past certification</a>
+                    </mat-list-item>
+                </mat-list>
+              </div>
+            </div>
+
+          </mat-expansion-panel>
+
+          <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header style="background-color:#ccd7de;">
+              <mat-panel-title style="border:0px solid white;" class="d-flex justify-content-center">
+                RBT
+              </mat-panel-title>
+              <!-- <mat-panel-description style="color:white;">
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+
+            <div class="row mt-3 mb-3">
+                <div class="col-sm-12">
+                  <mat-list role="list">
+                      <mat-list-item role="listitem">
+                          <a class="dropdown-item" href="#">RBT Exam Instructions</a>
+                      </mat-list-item>
+                      <mat-list-item role="listitem">
+                          <a class="dropdown-item" href="#">RBT Renewal</a>
+                      </mat-list-item>
+                  </mat-list>
+                </div>
+              </div>
+
+          </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                               (closed)="panelOpenState = false">
+            <mat-expansion-panel-header style="background-color:#ccd7de;">
+              <mat-panel-title style="border:0px solid white;" class="d-flex justify-content-center">
+                BCaBA
+              </mat-panel-title>
+              <!-- <mat-panel-description style="color:white;">
+                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+              </mat-panel-description> -->
+            </mat-expansion-panel-header>
+
+            <div class="row mt-3 mb-3">
+              <div class="col-sm-12">
+                <mat-list role="list">
+                    <mat-list-item role="listitem">
+                        <a class="dropdown-item" href="#">BCaBA Exam Application </a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <a class="dropdown-item" href="#">BCaBA Continuing Education Exam Application</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <a class="dropdown-item" href="#">BCaBA Retake Application</a>
+                    </mat-list-item>
+                    <mat-list-item role="listitem">
+                        <a class="dropdown-item" href="#">BCBA Qualify via past certification</a>
+                    </mat-list-item>
+                </mat-list>
+              </div>
+            </div>
+
+          </mat-expansion-panel>
+          
+      </mat-accordion>
+
+
+  </div>
+
+</div> <!-- end application type -->
+
+
+<!-- fix table -->
+
+<mat-card class="mt-5">
+<div class="row mt-5">
+  <div class="col-sm-12">
+
+      <h3 class="text-center mb-5"> Application Summary </h3>
+      <table class="table border-bottom">
+          <thead style="background-color: #d2dce2">
+            <tr>
+              <th scope="col">Exam Type</th>
+              <th scope="col">Stats</th>
+              <th scope="col">Date Created</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-4">-</td>
+              <td class="p-4">-</td>
+              <td class="p-4">-</td>
+            </tr>
+          </tbody>
+        </table>
+
+  </div>
+</div>
+</mat-card>
+
+</div> <!-- end container  -->

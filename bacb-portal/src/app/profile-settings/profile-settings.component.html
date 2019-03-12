@@ -1,0 +1,746 @@
+<app-header></app-header>
+
+<div class="container mb-5">
+
+<!-- breadcrumb-->
+<div class="row mt-5 ml-0">
+    <div class="col-sm-12 offset-sm-0 p-0">
+        <nav>
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a>My Account</a></li>
+                <li class="breadcrumb-item active">Profile Settings</li>
+            </ol>
+        </nav>
+    </div>
+</div>  
+
+<!-- title -->
+<div class="row mt-4">
+    <div class="col-sm-12">
+      <div class="page-header d-flex justify-content-center">
+          <h1>Profile Settings</h1>
+      </div>
+    </div>
+</div> 
+  
+<!-- email change request -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          Email Change Request
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+            <!-- <mat-panel-description> -->
+            Please enter your new email address for us to review. You will be emailed once the change has been approved. 
+            continue to use your current email to login until you are notified that your email address has been approved. 
+            <!-- </mat-panel-description> -->
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4"> 
+            <mat-form-field class="width-100">
+                <input matInput placeholder="New Email Address">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4"> 
+            <mat-form-field class="width-100">
+                <input matInput placeholder="Confirm New Email Address">
+            </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          <mat-form-field class="width-100">
+              <input matInput placeholder="Alternative Email Address">
+          </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <mat-form-field class="width-100">
+              <input matInput placeholder="Confirm Alternative Email Address">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- name change request -->
+<mat-accordion class="mt-5 mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          Name Change Request
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3 pb-4">
+        <div class="col-sm-12">
+          <!-- <mat-panel-description> -->
+            Please enter your new name below and upload a copy of your government-issued ID with your new name to the BACB via email
+            using the from below, or mail to:  
+          <!-- </mat-panel-description> -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <!-- <mat-panel-description> -->
+            <blockquote>
+                BACB - Name Change, 7950 Shaffer Parkway, Littleton, CO 80127 USA
+            </blockquote>
+          <!-- </mat-panel-description> -->
+        </div>
+      </div>
+      <div class="row mb-5">
+        <div class="col-sm-12">
+          <!-- <mat-panel-description> -->
+            We will notify you via email once your name change has been approved, or you may check the "Name Change Status" below to see the current status of your submitted changes.  
+          <!-- </mat-panel-description> -->
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4"> 
+          <mat-form-field class="width-100">
+              <input matInput placeholder="Name Change Status">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4"> 
+          <mat-form-field class="width-100">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+          <div class="col-sm-4"> 
+            <mat-form-field class="width-100">
+                <input matInput placeholder="Old First Name">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="width-100">
+                <input matInput placeholder="Old Last Name">
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div class="row mt-3">
+          <div class="col-sm-4"> 
+            <mat-form-field class="width-100">
+                <input matInput placeholder="New First Name">
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field class="width-100">
+                <input matInput placeholder="New Last Name">
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          Name Change Document Submission Method
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          <mat-radio-group>
+              <mat-radio-button color="primary" value="1">Online Submission</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="col-sm-4">
+          <mat-radio-group>
+              <mat-radio-button color="primary" value="1">Mail Submission</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-4">
+          Upload Name Change Document
+        </div>
+      </div>
+      <div class="row mt-3">
+          <div class="col-sm-6">
+              <input class="ng-hide" id="input-file-id" multiple type="file" class="mb-2" />
+              <label for="input-file-id" class="md-button">Acceptable File Types: png, jpg, gif. File must be under 25 MG in size</label>
+          </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- BACB email correspondence -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          BACB Email Correspondence
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+            <mat-panel-description>
+            Below you will find a record of all email correspondence between this account and the BACB. If you believe any of the following records are in error,
+            please contact Customer Serivce via the Contact Us form.  
+            </mat-panel-description>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-12"> 
+
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Subject</th>
+                    <th scope="col">Date Sent</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Email Subject Title</th>
+                    <td>Date 01/11/2019</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Email Subject Title</th>
+                    <td>Date 01/11/2019</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Email Subject Title</th>
+                    <td>Date 01/11/2019</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+        </div>
+      </div>
+
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- account registration - contact information -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          Account Registration - Contact Information
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+            <mat-panel-description>
+            Please make sure your contact information is correct. <br>
+            Please click "Continue" after you have entered all of the required information. 
+            </mat-panel-description>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-12 mt-5 mb-5 border-bottom"> 
+          <label> Name </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field>
+              <mat-select placeholder="Salutation">
+                <mat-option> Mr. </mat-option>
+                <mat-option> Mrs. </mat-option>
+                <mat-option> Ms. </mat-option>
+                <mat-option> Dr. </mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="First Name" reqiured>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-sm-6">
+              <mat-form-field class="example-full-width">
+                <input matInput placeholder="Middle Name" reqiured>
+              </mat-form-field>
+          </div>
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Last Name" reqiured>
+            </mat-form-field>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+          <mat-form-field>
+              <mat-select placeholder="Salutation">
+                <mat-option> Jr. </mat-option>
+                <mat-option> II </mat-option>
+                <mat-option> III </mat-option>
+                <mat-option> IV </mat-option>
+              </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-12 mt-5 mb-5 border-bottom"> 
+          <label> Phone Numbers </label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Phone Number" reqiured>
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Extension">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Secondary Phone">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Mobile Phone">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+          <div class="col-sm-12 mt-5 mb-5 border-bottom"> 
+            <label> Email Address </label>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Primary Email">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Confirm Primary Email">
+          </mat-form-field>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-6">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Secondary Email">
+            </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+            <input matInput placeholder="Confirm Secondary Email">
+          </mat-form-field>
+        </div>
+      </div>      
+
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- BACB certification gateway -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          BACB Certification Gateway
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+            <mat-panel-description>
+              <p class="">
+                  Welcome, Customer Service BCBA, to the BACB Certification Gateway. This is the Gateway home page. It shows you links of available options for your account.
+                  If you feel you should see additional options, please contact the BACB using our contact form at <a href="https://www.bacb.com/contact-us/" target="_blank"> bacb.com/contact-us </a> or call us at 720-438-4321.
+              </p>
+            </mat-panel-description>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-sm-12 mt-0 mb-5 border-bottom"> 
+          <label> Journals </label>
+        </div>
+      </div>
+
+      <div class="row mt-0">
+        <div class="col-sm-12"> 
+          <p>
+            The BACB is pleased to provide its certificants with the following scholarly journal and database resources.
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-0">
+        <div class="col-sm-2 border-right border-bottom"> 
+          <label>ProQuest</label>
+        </div>
+        <div class="col-sm-5 border-bottom">
+          <ul>
+            <li>
+              FRIC Searchable Reasearch Database
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row mt-0">
+        <div class="col-sm-2 border-right"> 
+          <label>Wiley</label>
+        </div>
+        <div class="col-sm-5">
+          <ul>
+            <li>
+              Journal of Applied Behavior Analysis
+            </li>
+            <li>
+              Journal of the Experimental Analysis of Behavior 
+            </li> 
+            <li>
+              Behavioral Interventions 
+            </li>            
+          </ul>
+        </div>
+      </div>      
+
+
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- BACB Subscription Categories -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          BACB Subscription Categaries 
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+          <mat-panel-description>
+            <p class="">
+              It is the intention of the BACB to provide you with access to important information regarding training, educational,
+              employment, and research opportunities. To achieve the goal, an email transmission service is available to organizations
+              that wish to provide information to BACB certificants. Your email address is kept confidential and not provide to the organization
+              requesting the transmission.
+              <br>
+              In an effort to ensure you receive only transmissions that are interest to you, you may use the options below to indicate the types 
+              of information you want to receive.  
+            </p>
+          </mat-panel-description>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12 mt-2 border-bottom"> 
+          <p>
+            Please select your Email preferences for the following categories:
+          </p>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-sm-6"> 
+          <div class="row">
+            <div class="col-sm-6">
+              Academic Research Invitation or Surveys
+            </div>
+            <div class="col-sm-6">
+              <mat-radio-group>
+                  <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                  <mat-radio-button value="2">Yes</mat-radio-button>
+              </mat-radio-group>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+              <div class="col-sm-6">
+                Market Research Surveys
+              </div>
+              <div class="col-sm-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                    <mat-radio-button value="2">Yes</mat-radio-button>
+                </mat-radio-group>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+          <div class="col-sm-6"> 
+            <div class="row">
+              <div class="col-sm-6">
+                Continuing Education Events
+              </div>
+              <div class="col-sm-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                    <mat-radio-button value="2">Yes</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                  Publications Announcements
+                </div>
+                <div class="col-sm-6">
+                  <mat-radio-group>
+                      <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                      <mat-radio-button value="2">Yes</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            </div>
+          </div>
+      </div>      
+    
+      <div class="row mt-4">
+          <div class="col-sm-6"> 
+            <div class="row">
+              <div class="col-sm-6">
+                Employment Opportunities 
+              </div>
+              <div class="col-sm-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                    <mat-radio-button value="2">Yes</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                  Request for Supervision
+                </div>
+                <div class="col-sm-6">
+                  <mat-radio-group>
+                      <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                      <mat-radio-button value="2">Yes</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            </div>
+          </div>
+      </div> 
+
+      <div class="row mt-4">
+          <div class="col-sm-6"> 
+            <div class="row">
+              <div class="col-sm-6">
+                Invitations to Join Provider Networks (insurance or other third-party payers) 
+              </div>
+              <div class="col-sm-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                    <mat-radio-button value="2">Yes</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-6">
+                  University Coursework Offerings
+                </div>
+                <div class="col-sm-6">
+                  <mat-radio-group>
+                      <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                      <mat-radio-button value="2">Yes</mat-radio-button>
+                  </mat-radio-group>
+                </div>
+            </div>
+          </div>
+      </div> 
+
+      <div class="row mt-4">
+          <div class="col-sm-6"> 
+            <div class="row">
+              <div class="col-sm-6">
+                Legislative/Political Initiatives 
+              </div>
+              <div class="col-sm-6">
+                <mat-radio-group>
+                    <mat-radio-button value="1" class="pr-4">No</mat-radio-button>
+                    <mat-radio-button value="2">Yes</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+
+          </div>
+      </div>       
+
+
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+<p class="mt-3 mb-3" class="margin-top:50px;"></p>
+
+<!-- BACB change password -->
+<mat-accordion class="mb-5">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header class="profile-header">
+        <mat-panel-title>
+          Change Password
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+  
+      <div class="row mt-3">
+        <div class="col-sm-12">
+            <mat-panel-description>
+              <p class="">
+                  Please use this form to change your password.
+              </p>
+            </mat-panel-description>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-12 ">
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Current Passowrd" reqiured>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="New Password" reqiured>
+          </mat-form-field>
+        </div>
+        <div class="col-sm-6">
+          <mat-form-field class="example-full-width">
+              <input matInput placeholder="Confirm New Password" reqiured>
+          </mat-form-field>
+        </div>
+      </div>
+  
+      <div class="row mt-2">
+        <div class="col-sm-12 d-flex justify-content-end">               
+            <button mat-flat-button color="accent" class="cancel-btn mr-3">Cancel</button>
+            <button mat-flat-button color="primary" class="save-btm mr-3">Save</button>
+            <!-- <button type="button" class="btn btn-danger mr-3 cancel-btn" ng-click="application.cancel()">Cancel</button> 
+            <button type="button" class="btn btn-warning mr-3 save-exit-btn" ng-click="application.continue(applicationForm, true)">Save & Exit</button> -->
+        </div>
+      </div>
+
+    </mat-expansion-panel>
+</mat-accordion>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end container -->

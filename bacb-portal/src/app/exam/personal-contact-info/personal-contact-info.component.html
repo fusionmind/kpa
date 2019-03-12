@@ -1,0 +1,358 @@
+<app-header></app-header>
+
+
+<div class="container">
+    
+    <!-- breadcrumb -->
+    <div class="row mt-5 ml-0">
+        <div class="col-sm-12 offset-sm-0 p-0">
+            <nav>
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a>My Applications</a></li>
+                    <li class="breadcrumb-item active">BCBA Certification Application Option 1 - Personal Contact Information</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- title and progress bar-->
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="page-header d-flex justify-content-center">
+                <h2>BCBA Certification Application Option 1 - Personal Contact Information</h2>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="progress">
+                <div class="progress-bar bacb-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
+                    1/10
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Personal Contact Form -->
+    <form (ngSubmit)="addPersonalContact(f)" #f="ngForm" class="mt-2 mb-2">  
+
+    <!-- text -->     
+    <div class="row pt-3 pb-3">
+        <div class="col-sm-12">
+            <p>
+                Review, update, and/or provide your information below. Use the My Account menu above to change your name and email address(es).
+            </p>
+            <p>
+            Any changes made to contact information on this page will be reflected in your account profile.
+            </p>
+        </div>
+    </div>      
+
+    <!-- basic information -->
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="panel panel-default bacb-panel-bg">
+                <legend class="panel-heading bacb-panel-header">Basic Information</legend>
+                <div class="panel-body">
+                    
+                    <div class="row"> 
+                        <div class="form-group col-sm-6" show-errors>
+                            <label class="d-flex justify-content-center">Full Name</label>
+                            <div class="d-flex justify-content-center">
+                                {{ this.fullname }}
+                            </div>
+                        </div>
+                        <div class="form-group col-sm-6" show-errors>
+                            <label class="d-flex justify-content-center">Email</label>
+                            <div class="d-flex justify-content-center">
+                                {{ this.useremail }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- lable titles -->
+                    <div class="row mt-5 mb-0">
+                        <div class="col-sm-5 d-flex justify-content-start">
+                            <label class="d-flex justify-content-center">Primary Phone </label> 
+                        </div>
+                        <div class="col-sm-6 d-flex justify-content-start">
+                            <label class="d-flex justify-content-center">Secondary Phone</label>
+                        </div>           
+                    </div>
+
+                    <div class="row mt-2 mb-0">
+                        <div class="col-sm-2">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Country Code" id="countrycode" name="countrycode" ngModel required>
+                                    <mat-option *ngFor="let c of countrycode" [value]="c.dial_code" >
+                                        {{c.name}} {{c.dial_code}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-3 form-group">
+                            <mat-form-field class="width-100">
+                                <input matInput type="text" placeholder="Phone Number" id="phone" name="phone" class="bfh-phone" data-format=" (ddd) ddd-dddd" ngModel required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-1 form-group">
+                            <mat-form-field class="width-100">
+                                <input matInput type="text" placeholder="Ext." id="ext" name="ext" ngModel>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-2">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Country Code" id="countrycode2" name="countrycode2" ngModel>
+                                    <mat-option *ngFor="let c of countrycode" [value]="c.dial_code" >
+                                        {{c.name}} {{c.dial_code}}
+                                    </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-3 from-group">                 
+                            <mat-form-field class="width-100">
+                                <input matInput type="text" placeholder="Secondary Phone Number" id="phone2" name="phone2" class="bfh-phone" data-format=" (ddd) ddd-dddd" ngModel>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-1 form-group">
+                            <mat-form-field class="width-100">
+                                <input matInput type="text" placeholder="Ext." id="ext2" name="ext2" ngModel>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+
+                    <mat-radio-group>
+                        <div class="row mt-2">
+                            <div class="col-sm-5">
+                                <mat-radio-button color="primary" value="primarymobile" id="primarymobile" name="primarymobile" (click)="pMobile('primarymobile')"  required> Is your primary phone a mobile number? </mat-radio-button>
+                            </div>
+                            <div class="col-sm-6">
+                                <mat-radio-button color="primary" value="secondarymobile" id="secondarymobile" name="secondarymobile" (click)="secondaryMobile('secondarymobile')"  required> Is secondary phone a mobile number? </mat-radio-button>
+                            </div>
+                        </div>
+                    </mat-radio-group>
+
+                    <div class="row mt-4 mb-4 mb-0">
+                        <div class="col-sm-4">
+                            <mat-form-field class="width-100">
+                                <input matInput type="email" aria-describedby="emailHelp" placeholder="Enter secondary email" name="secondaryemail" class="bfh-phone" ngModel>
+                            </mat-form-field>
+                        </div>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- physical address-->
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="panel panel-default bacb-panel-bg">
+                <legend class="panel-heading bacb-panel-header">Physical Address</legend>
+                <div class="panel-body">
+                    
+                    <div class="row mt-1 mb-4">
+                        <div class="col-sm-6">
+                            <mat-form-field class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    placeholder="Address Line 1"
+                                    ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="address2"
+                                    id="address2"
+                                    placeholder="Address Line 2"
+                                    ngModel>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-3">
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Country" name="country" id="country" [(ngModel)]="selectedValue" ngModel required>
+                                    <mat-option *ngFor="let c of country" [value]="c.code"> {{c.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-3">
+                            <mat-form-field class="width-100">
+                                <input matInput  
+                                type="text"
+                                name="city"
+                                id="city"
+                                placeholder="City"
+                                ngModel
+                                required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-sm-3">
+
+                            <mat-form-field *ngIf="selectedValue == 'US'" class="width-100">
+                                <mat-select placeholder="State/Province" name="state" id="state" ngModel required>
+                                    <mat-option value="option" *ngFor="let s of states"> {{s.short}} - {{s.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field *ngIf="selectedValue == 'CA'" class="width-100">
+                                <mat-select placeholder="State/Province" name="canada" id="canada" ngModel required>
+                                    <mat-option value="option" *ngFor="let c of canada"> {{c.short}} - {{c.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                        </div>
+
+                        <div class="col-sm-3">
+                            <mat-form-field class="width-100">
+                                <input matInput 
+                                type="text"
+                                name="zip"
+                                id="zip"
+                                placeholder="Postal Code"
+                                ngModel
+                                required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- mailing address -->
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="panel panel-default bacb-panel-bg">
+                <legend class="panel-heading bacb-panel-header">Mailing Address</legend>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-1 ml-3">
+                            <mat-checkbox color="primary" name="mailingaddresschecked" id="mailingaddresschecked" (click)="sameAddress()" ngModel>
+                                Physical address is the same as mailing address
+                            </mat-checkbox>
+                        </div>
+                    </div>
+                    <div class="row mt-1 mb-4">
+                        <div class="col-sm-6">
+                            <mat-form-field class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="mailingaddress"
+                                    id="mailingaddress"
+                                    placeholder="Address Line 1"
+                                    ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-6">
+                            <mat-form-field class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="mailingaddress2"
+                                    id="addrmailingaddress2ess2"
+                                    placeholder="Address Line 2"
+                                    ngModel
+                                    >
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-sm-3">                           
+                            <mat-form-field class="width-100">
+                                <mat-select placeholder="Country" name="mailingcountry" id="mailingcountry" [(ngModel)]="selectedValue2" ngModel required>
+                                    <mat-option value="option" *ngFor="let c of country" [value]="c.code"> {{c.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                        <div class="col-sm-3">
+
+                            <mat-form-field class="width-100">
+                                    <input matInput  
+                                    type="text"
+                                    name="mailingcity"
+                                    id="mailingcity"
+                                    placeholder="City"
+                                    ngModel
+                                    required>
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-sm-3">
+
+                            <mat-form-field *ngIf="selectedValue2 == 'US'" class="width-100">
+                                <mat-select placeholder="State/Province" name="mailingstate" id="mailingstate" ngModel required>
+                                    <mat-option value="option" *ngFor="let s of states"> {{s.short}} - {{s.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+                            <mat-form-field *ngIf="selectedValue2 == 'CA'" class="width-100">
+                                <mat-select placeholder="State/Province" name="mailingcanada" id="mailingcanada" ngModel required>
+                                    <mat-option value="option" *ngFor="let c of canada"> {{c.short}} - {{c.name}} </mat-option>
+                                </mat-select>
+                            </mat-form-field>
+
+
+                        </div>
+                        <div class="col-sm-3">
+                            <mat-form-field class="width-100">
+                                    <input matInput 
+                                    type="text"
+                                    name="mailingzip"
+                                    id="mailingzip"
+                                    placeholder="Postal Code"
+                                    ngModel
+                                    required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="alert alert-danger alert-dismissible" role="alert" ng-if="application.data.errorMessage">
+                <button type="button" class="close" data-dismiss="alert" ng-click="application.data.errorMessage = ''" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>Please complete all required fields</h4>
+            </div>
+        </div>
+    </div> 
+    <div class="row mb-5">  
+        <div class="col-lg-12 text-center">
+            <div class="btn-group" role="group">
+
+                <button mat-flat-button class="back-btn mr-4" routerLink="/exam-instructions">Back</button>
+
+                <button mat-flat-button class="cancel-btn mr-4" routerLink="/exam-landing">Cancel</button> 
+
+                <button mat-flat-button class="save-exit-btn mr-4" routerLink="/exam-landing">Save & Exit</button>
+                
+                <button mat-flat-button class="bacb-primary-btn" type="submit">Continue</button>
+
+            </div>
+        </div>
+    </div>
+
+    
+    </form>
+
+</div> <!-- end container -->
+
